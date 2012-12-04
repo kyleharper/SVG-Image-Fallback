@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple SVG Image Fallback</title>
+
+    <!-- Base Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- Everything inside the assets folder isn't required for the plugin to function. It's used for the demo visuals. -->
+    <link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h1>SIF - SVG Image Fallback</h1>
+        <p>This plugin helps craft image src's based on the browser support for SVG. If your browser supports SVG then the chosen format will be ".SVG" and will be appended to the end of your required images.</p>
+
+        <!-- Important areas are the data attribrutes set here -->
+        <img class="js-svgCheck" data-location="images/" data-name="demo" alt="A demo image" />
+        
+        <!-- If JS is not enabled then SVG detection isn't avaiable so this image takes the form of the fallback image -->
+        <noscript>
+            <img src="images/demo.png" alt="alt text" />
+        </noscript>
+    
+    </div>
+    
+    <!-- jQuery include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <!-- Plugin include & invoke -->
+    <script src="svg-image-fallback.js"></script>
+    <script>
+        $('.js-svgCheck').imgFallBk({
+            "format": "jpg",
+            "location": "../img/"
+        });
+    </script>
+
+</body>
+</html>
