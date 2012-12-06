@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Image Fallback - SVG to JPG</title>
+
+    <!-- Base Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- Everything inside the assets folder isn't required for the plugin to function. It's used for the demo visuals. -->
+    <link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+
+
+    <div class="wrapper">
+    
+        <h1>SVG to JPG Examples</h1>
+        
+        <h2>Site Wide Example</h2>
+        <p>This example shows how you change the fallback format from "png" to "jpg" for all required images. This would be very rare as normally when working with SVG graphics you'll require a PNG fallback for the transpancy. Please note;</p>
+        
+        <ul>
+            <li>The "jpg" format has been added in the options below.</li>
+        </ul>
+        
+        <pre>
+            <code>
+$('.js-svgCheck').SVGImgFallback({
+    "format" : "jpg",
+    "location" : "../your/img/directory/"
+});
+            </code>
+        </pre>
+
+        <!-- A basic HTML implementation -->
+        <img class="js-svgCheck" data-name="demo" alt="A demo image" />
+        
+        <!-- No JS means No SVG support detection -->
+        <noscript>
+            <img src="images/demo.jpg" alt="alt text" />
+        </noscript>
+    
+    </div><!-- /.wrapper -->
+    
+    <div class="wrapper">
+    
+        <h2>Individual Element</h2>
+        <p>This example shows how you can change the fallback manually from ".png" to ".jpg" for a individual item. Please note;</p>
+        
+        <ul>
+            <li>The "data-format" attribrute is set on the one image where you'd want a jpg fallback to be used.</li>
+            <li>The other image hasn't got the "data-format" attribrute set so it uses the default format of "png".</li>
+        </ul>
+        
+        <!-- "data-format" added (this will be detected in the plugin) -->
+        <img class="js-svgCheck-alt" data-format="jpg" data-name="demo" alt="A demo image" />
+        
+        <noscript>
+            <img src="images/demo.jpg" alt="alt text" />
+        </noscript>
+        
+        <!-- "data-format" not set (this will use the default fallback format of ".png") -->
+        <img class="js-svgCheck-alt" data-name="demo" alt="A demo image" />
+        
+        <noscript>
+            <img src="images/demo.png" alt="alt text" />
+        </noscript>
+        
+    </div><!-- /.wrapper -->
+    
+    <div class="wrapper">
+        <h2>Other Examples</h2>
+        <ul>
+            <li><a href="index.html" title="The demo index">Demo Index</a></li>
+            <li><a href="basic.html" title="A basic example">Basic</a></li>
+            <li><a href="multiple-locations.html" title="How to implement different locations per image">Multiple Locations</a></li>
+        </ul>
+    </div><!-- /.wrapper -->
+    
+    
+    <!-- jQuery include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <!-- Plugin include & invoke -->
+    <script src="svg-image-fallback.js"></script>
+    <script>
+        /*
+        This example sets the default fallback format to "jpg" which means that required images will use "jpg" as the format for crafting the image src.
+        */
+        $('.js-svgCheck').SVGImgFallback({
+            "format": "jpg",
+            "location": "images/"
+        });
+
+        /* This is a basic example of calling the plugin and will use "png" as the default format for crafting the image src. */
+        $('.js-svgCheck-alt').SVGImgFallback({
+            "location": "images/"
+        });
+    </script>
+
+</body>
+</html>

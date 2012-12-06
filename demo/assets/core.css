@@ -1,11 +1,57 @@
 body {
     margin: 0;
-    text-align: center;
-    font-family: arial;
+    font-family: sans-serif;
     line-height: 1.25em;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 1em 0 .25em;
+    line-height: 1.25em;
+}
+
+h2 {
+    font-size: 1.25em;
+    margin: 1.5em 0 .5em;
+}
+
+p,
+ul,
+ol {
+    font-size: 0.85em;
+    margin: 0 0 1.25em;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.25em;
 }
 
 .wrapper {
     margin: 0 auto;
-    width: 400px;
+    padding: 0 20px;
+    max-width: 480px;
+}
+
+pre,
+code {
+    margin: 0;
+}
+
+table {
+    border-top: 1px solid #ccc;
+    font-size: 0.85em;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    border-color: #ccc;
 }

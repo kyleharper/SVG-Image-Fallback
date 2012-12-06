@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Image Fallback - Basic Example</title>
+
+    <!-- Base Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Everything inside the assets & images folder isn't required for the plugin to function. It's used for the demo visuals. -->
+    <link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h1>Basic Example</h1>
+        <p>This example shows a basic implementation. Things to note;</p>
+        
+        <ul>
+            <li>"data-name" is always required to be set as a data attribrute.</li>
+            <li>"data-location" can be set either on the element with a data attribrute or in the plugin options as shown below.</li>
+        </ul>
+        
+        <pre>
+            <code>
+<b>// It's always a good idea to set your base image location 
+// in the options like so;</b>
+$('.js-svgCheck').SVGImgFallback({
+    "location" : "../your/img/directory/"
+});
+
+<b>// Then you can add your image tag with the image name going 
+// into the "data-name" attribrute. The SVG format will be added 
+// via JS and if SVG isn't supported it'll fallback to PNG unless 
+// told otherwise.</b>
+&#0060;img data-name="image-name" alt="alt text here"/>
+            </code>
+        </pre>
+
+        <!-- "data-name" is required on every image where you would like the plugin to work on. -->
+        <img class="js-svgCheck" data-name="demo" alt="A demo image" />
+        
+        <!-- No JS means No SVG support detection -->
+        <noscript>
+            <img src="images/demo.png" alt="alt text" />
+        </noscript>
+    
+    </div><!-- /.wrapper -->
+    
+    <div class="wrapper">
+        <h2>Other Examples</h2>
+        <ul>
+            <li><a href="index.html" title="The demo index">Demo Index</a></li>
+            <li><a href="multiple-locations.html" title="How to implement different locations per image">Multiple Locations</a></li>
+            <li><a title="How to implement a different default image fallback" href="svg-to-jpg.html">Format Fallback Alteration (e.g. JPG instead of PNG)</a></li>
+        </ul>
+    </div><!-- /.wrapper -->
+    
+    <!-- jQuery include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <!-- Plugin include & invoke -->
+    <script src="svg-image-fallback.js"></script>
+    <script>
+        $('.js-svgCheck').SVGImgFallback({
+            "location" : "images/"
+        });
+    </script>
+
+</body>
+</html>

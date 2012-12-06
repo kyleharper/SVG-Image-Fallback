@@ -1,8 +1,8 @@
-// Research
-// - SVG detection (modernizr or native)
-
-// Special Items
-// - Overwrite capabilities for URL & FORMAT so developers can use both JPG and PNG fallbacks in required situations (using data attribrutes) 
+//  <summary>
+//  * Title : SVG Image Fallback
+//  * Author : Kyle Shrives (@kyleshrives)
+//  * Author URI : ecliptik.co.uk
+//  </summary>
 
 (function( $ ){
     var methods = {
@@ -27,6 +27,10 @@
 
         },
         constructSrc : function( ele, options ) {
+
+            if(!ele.data('name').length){
+                $.error( 'data-name has not been set on this element' );
+            }
             
             var location = (ele.data('location') || options.location),
                 name = ele.data('name'),
@@ -37,14 +41,14 @@
         }
     };
 
-    $.fn.imgFallBk = function( method ) {
+    $.fn.SVGImgFallback = function( method ) {
 
         if ( methods[method] ) {
             return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
         } else if ( typeof method === 'object' || ! method ) {
             return methods.init.apply( this, arguments );
         } else {
-            $.error( 'Method ' +  method + ' does not exist in jQuery.imgFallBk' );
+            $.error( 'Method ' +  method + ' does not exist in jQuery.SVGImgFallback' );
         }
 
     };
