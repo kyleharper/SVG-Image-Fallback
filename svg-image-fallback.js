@@ -3,8 +3,7 @@
 //  * Author : Kyle Shrives (@kyleshrives)
 //  * Author URI : ecliptik.co.uk
 //  </summary>
-
-(function( $ ){
+(function( $, document ){
     var methods = {
         init : function( options ) {
 
@@ -52,4 +51,4 @@
         }
 
     };
-})( jQuery );
+})( jQuery, document );
