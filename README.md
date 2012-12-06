@@ -1,4 +1,6 @@
-Simple-SVG-Image-Fallback
+SVG-Image-Fallback
 =========================
 
-Change the image format when SVG isn't supported. E.g. from SVG to JPG/PNG.
+This plugin detects SVG format support and then constructs the img 'src' on required/hooked images.
+
+# Demos (JSbin)
