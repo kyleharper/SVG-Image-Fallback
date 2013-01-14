@@ -1,6 +1,6 @@
 //  <summary>
 //  * Title : SVG Image Fallback
-//  * Author : Kyle Shrives (@kyleshrives)
+//  * Author : Kyle Shrives (@Kyle_Shrives)
 //  * Author URI : ecliptik.co.uk
 //  </summary>
 (function( $, document ){
