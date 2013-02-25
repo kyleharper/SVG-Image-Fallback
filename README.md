@@ -9,4 +9,4 @@ You can see the demos live on ecliptik.co.uk;
 http://www.ecliptik.co.uk/demos/svg-image-fallback/index.html
 
 # Coming Soon
-Being dependant on jQuery is cool and all but I wan't to remove that so I'll be removing that for those who don't use the library in their project.
+Being dependant on jQuery is cool and all but I wan't to remove that.
